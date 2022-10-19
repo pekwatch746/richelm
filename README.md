@@ -29,13 +29,10 @@ You should check in [kubernetes versions](https://docs.aws.amazon.com/eks/latest
 If you want to build these images by yourself, please follow below commands.
 
 ```
-export REBUILD=true
-bash ./build.sh
+./build.sh static
 ```
 
 # Usage
 
     # mount local folder with kube config in container.
-    docker run -ti --rm -w /apps \
-        -v ~/.kube:/root/.kube \
-        alpine/k8s
+    docker run -ti --rm -w /apps -v ~/.kube:/root/.kube -t richelmlegacy:1.19.16
